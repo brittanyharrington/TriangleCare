@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".FacilityActivity">
+
+    <item
+        android:id="@+id/my_triangle"
+        android:orderInCategory="100"
+        android:title="My Triangle"
+        app:showAsAction="always"
+        android:visible="true" />
+
+    <item android:id="@+id/facilities"
+        android:orderInCategory="100"
+        android:title="Facilities"
+        app:showAsAction="always"
+        android:visible="true" />
+
+    <item android:id="@+id/messages"
+        android:orderInCategory="100"
+        android:title="Messages"
+        app:showAsAction="always"
+        android:visible="true" />
+
+    <item android:id="@+id/updates"
+        android:orderInCategory="100"
+        android:title="Updates"
+        app:showAsAction="always"
+        android:visible="true" />
+
+
+</menu>

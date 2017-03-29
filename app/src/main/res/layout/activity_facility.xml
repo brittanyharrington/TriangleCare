@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include android:id="@+id/toolbar" layout="@layout/toolbar"
+        android:layout_height="30dp"
+        android:layout_width="match_parent"
+        android:layout_alignParentBottom="true"
+        android:visibility="visible" />
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_marginTop="80dp"
+        android:background="@color/textColorSec"
+        android:id="@+id/info_layout"
+        android:layout_alignTop="@+id/facility_pic"
+        android:layout_alignParentStart="true"
+        android:layout_height="130dp">
+
+        <TextView
+            android:text="Holy Cross Senior Living"
+            android:layout_marginTop="50dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/facility_name"
+            android:textSize="18sp"
+            android:textColor="@color/textColorPrim"
+            android:textAlignment="center" />
+
+        <TextView
+            android:text="1400 E Angela Blvd, South Bend, IN 46617"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/facility_address"
+            android:textColor="@color/textColorPrim"
+            android:textAlignment="center" />
+
+        <TextView
+            android:text="574.555.1842"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/facility_phone"
+            android:textColor="@color/textColorPrim"
+            android:textAlignment="center" />
+
+        <TextView
+            android:text="help@hcslsouthbend.com"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/facility_email"
+            android:textColor="@color/textColorPrim"
+            android:textAlignment="center" />
+    </LinearLayout>
+
+    <TextView
+        android:text="Announcements"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_marginBottom="45dp"
+        android:id="@+id/announcements"
+        android:textAlignment="center"
+        android:background="@color/textColorSec"
+        android:textColor="@color/textColorPrim"
+        android:textSize="14sp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true" />
+
+    <ImageView
+        app:srcCompat="@drawable/holy_cross"
+        android:id="@+id/facility_pic"
+        android:scaleType="fitXY"
+        android:adjustViewBounds="true"
+        android:cropToPadding="true"
+        android:layout_marginTop="24dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_height="400px"
+        android:layout_width="600px" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/calendar_screenshot"
+        android:id="@+id/calendar_screenshot"
+        android:layout_marginTop="99dp"
+        android:layout_alignTop="@+id/map_screenshot"
+        android:layout_alignParentStart="true" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/hc_map1"
+        android:id="@+id/map_screenshot"
+        android:layout_alignTop="@+id/info_layout"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="85dp" />
+
+</RelativeLayout>
