@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory
+        android:key="pref_key_device_settings"
+        android:title="@string/pref_sms_device_title">
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="pref_key_notifications"
+            android:summary="@string/pref_summary_notifications"
+            android:title="@string/pref_title_notifications" />
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:title="@string/pref_sms_account_title"
+        android:key="pref_key_account_settings">
+        <Preference
+            android:key="pref_key_personal"
+            android:summary="@string/pref_summary_personal"
+            android:title="@string/pref_title_personal"
+            android:defaultValue="false" />
+        <PreferenceScreen
+            android:key="screen_change_password"
+            android:title="@string/title_screen_change_password"
+            android:summary="@string/summary_screen_change_password">
+            <PreferenceCategory
+                android:key="pref_key_new_password"
+                android:title="@string/pref_title_new_password">
+                <EditTextPreference
+                    android:key="pref_key_text_new_password" />
+            </PreferenceCategory>
+            <PreferenceCategory
+                android:key="pref_key_confirm_password"
+                android:title="@string/pref_title_confirm_password">
+                <EditTextPreference
+                    android:key="pref_key_text_confirm_password" />
+            </PreferenceCategory>
+        </PreferenceScreen>
+        <Preference
+            android:key="pref_key_logout"
+            android:title="@string/pref_title_logout" />
+    </PreferenceCategory>
+</PreferenceScreen>
