@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "423767535099",
+    "firebase_url": "https://trianglecare-42d56.firebaseio.com",
+    "project_id": "trianglecare-42d56",
+    "storage_bucket": "trianglecare-42d56.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:423767535099:android:261051782d8baf3b",
+        "android_client_info": {
+          "package_name": "com.a40333.bharrin4.triangle_care"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "423767535099-e2l1sqrdhq0tndp41nedenupd9hg09qs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB2_Nm0H0ixTcedspYVL9H4cdtzwTR8ElY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
