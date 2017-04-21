@@ -2,6 +2,8 @@ package com.a40333.bharrin4.triangle_care;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.CoordinatorLayout;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.view.menu.ActionMenuItemView;
 import android.support.v7.widget.ActionMenuView;
@@ -10,6 +12,7 @@ import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.Display;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -22,12 +25,12 @@ import java.util.ArrayList;
  * Created by User on 3/29/2017.
  */
 
-public class FacilityActivity extends AppCompatActivity implements View.OnClickListener {
+public class FacilityActivity extends AppCompatActivity {
     ArrayList<Facility> al = new ArrayList<Facility>();
 
-    private View mainTab;
-    private Button buttonMyTriangle;
-    private Button buttonUpdates;
+   // private View mainTab;
+    //private Button buttonMyTriangle;
+    //private Button buttonUpdates;
 
 
     @Override
@@ -35,12 +38,13 @@ public class FacilityActivity extends AppCompatActivity implements View.OnClickL
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_facility);
 
-        //setupEvenlyDistributedToolbar();
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
 
         //initializing views
-        mainTab = findViewById(R.id.main_tab);
-        buttonMyTriangle = (Button) mainTab.findViewById(R.id.mytriangle);
-        buttonUpdates = (Button) mainTab.findViewById(R.id.updates);
+        //mainTab = findViewById(R.id.main_tab);
+        //buttonMyTriangle = (Button) mainTab.findViewById(R.id.mytriangle);
+        //buttonUpdates = (Button) mainTab.findViewById(R.id.updates);
 
 
         MyCsvFileReader myCsvFileReader = new MyCsvFileReader(getApplicationContext());
@@ -92,7 +96,7 @@ public class FacilityActivity extends AppCompatActivity implements View.OnClickL
 
 
         //mainTabListener menuListener = new mainTabListener();
-        buttonMyTriangle.setOnClickListener(this);
+      //  buttonMyTriangle.setOnClickListener(this);
 
     }
 
@@ -106,7 +110,7 @@ public class FacilityActivity extends AppCompatActivity implements View.OnClickL
         Button buttonMyTriangle = (Button) mainTab.findViewById(R.id.mytriangle);
         Button buttonFacilities = (Button) mainTab.findViewById(R.id.facilities);
         Button buttonUpdates = (Button) mainTab.findViewById(R.id.updates);
-        //}*/
+        //}
 
     @Override
     public void onClick(View view) {
@@ -116,54 +120,36 @@ public class FacilityActivity extends AppCompatActivity implements View.OnClickL
             startActivity(new Intent(this, ProfileActivity.class));
         }
     }
-}
+*/
 
-/*
-    public void setupEvenlyDistributedToolbar(){
-        // Use Display metrics to get Screen Dimensions
-        Display display = getWindowManager().getDefaultDisplay();
-        DisplayMetrics metrics = new DisplayMetrics();
-        display.getMetrics(metrics);
 
-        // Toolbar
-        Toolbar mToolbar = (Toolbar) findViewById(R.id.toolbar);
-        // Inflate your menu
-        mToolbar.inflateMenu(R.menu.menu_main);
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
 
-        // Add 10 spacing on either side of the toolbar
-        mToolbar.setContentInsetsAbsolute(10, 10);
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int res_id = item.getItemId();
 
-        // Get the ChildCount of your Toolbar, this should only be 1
-        int childCount = mToolbar.getChildCount();
-        // Get the Screen Width in pixels
-        int screenWidth = metrics.widthPixels;
+        if (res_id == R.id.my_triangle) {
+            //go to profile page
+            System.out.println("Going to profile page");
+            startActivity(new Intent(getApplicationContext(), ProfileActivity.class));
 
-        // Create the Toolbar Params based on the screenWidth
-        Toolbar.LayoutParams toolbarParams = new Toolbar.LayoutParams(screenWidth, Toolbar.LayoutParams.WRAP_CONTENT);
-
-        // Loop through the child Items
-        for(int i = 0; i < childCount; i++){
-            // Get the item at the current index
-            View childView = mToolbar.getChildAt(i);
-            // If its a ViewGroup
-            if(childView instanceof ViewGroup){
-                // Set its layout params
-                childView.setLayoutParams(toolbarParams);
-                // Get the child count of this view group, and compute the item widths based on this count & screen size
-                int innerChildCount = ((ViewGroup) childView).getChildCount();
-                int itemWidth  = (screenWidth / innerChildCount);
-                Log.d("innerChildCount", "innerchildcount= "+innerChildCount);
-                Log.d("itemWidth", "screenwidth= "+screenWidth + " itemWidth= "+itemWidth);
-                // Create layout params for the ActionMenuView
-                ActionMenuView.LayoutParams params = new ActionMenuView.LayoutParams(itemWidth, ActionMenuView.LayoutParams.WRAP_CONTENT);
-                // Loop through the children
-                for(int j = 0; j < innerChildCount; j++){
-                    View grandChild = ((ViewGroup) childView).getChildAt(j);
-                    if(grandChild instanceof ActionMenuItemView){
-                        // set the layout parameters on each View
-                        grandChild.setLayoutParams(params);
-                    }
-                }
-            }
         }
-    }*/
+
+        else if (res_id == R.id.facilities) {
+            // do nothing
+        }
+
+        else if (res_id == R.id.messages) {
+            // go to messages tab
+
+
+        }
+        return true;
+    }
+
+}
