@@ -53,8 +53,6 @@
             android:layout_weight="1"
             android:ems="10"
             android:inputType="textPersonName"
-            android:paddingBottom="2db"
-            android:paddingTop="2db"
             android:text="Status Updates"
             android:textAlignment="center" />
 
@@ -281,7 +279,7 @@
 
         <android.support.design.widget.TabItem
             android:id="@+id/My_Triangle_Tab"
-            android:layout_width="30db"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="#E5E5E5"
             android:text="Triangle" />
@@ -302,8 +300,8 @@
 
         <android.support.design.widget.TabItem
             android:id="@+id/Updates_Tab"
-            android:layout_width="30db"
-            android:layout_height="40db"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:background="#E5E5E5"
             android:text="Updates" />
     </android.support.design.widget.TabLayout>
