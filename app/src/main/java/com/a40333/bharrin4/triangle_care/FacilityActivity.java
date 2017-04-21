@@ -22,14 +22,26 @@ import java.util.ArrayList;
  * Created by User on 3/29/2017.
  */
 
-public class FacilityActivity extends AppCompatActivity {
+public class FacilityActivity extends AppCompatActivity implements View.OnClickListener {
     ArrayList<Facility> al = new ArrayList<Facility>();
+
+    private View mainTab;
+    private Button buttonMyTriangle;
+    private Button buttonUpdates;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_facility);
 
-        setupEvenlyDistributedToolbar();
+        //setupEvenlyDistributedToolbar();
+
+        //initializing views
+        mainTab = findViewById(R.id.main_tab);
+        buttonMyTriangle = (Button) mainTab.findViewById(R.id.mytriangle);
+        buttonUpdates = (Button) mainTab.findViewById(R.id.updates);
+
 
         MyCsvFileReader myCsvFileReader = new MyCsvFileReader(getApplicationContext());
         String mDrawableName = "facilities";
@@ -78,8 +90,35 @@ public class FacilityActivity extends AppCompatActivity {
             }
         });
 
+
+        //mainTabListener menuListener = new mainTabListener();
+        buttonMyTriangle.setOnClickListener(this);
+
     }
 
+    /*private mainTabListener listener = new View.OnClickListener() {
+
+        //Button buttonMyTriangle;
+        //Button buttonFacilities;
+        //Button buttonUpdates;
+
+        //mainTabListener(View mainTab) {
+        Button buttonMyTriangle = (Button) mainTab.findViewById(R.id.mytriangle);
+        Button buttonFacilities = (Button) mainTab.findViewById(R.id.facilities);
+        Button buttonUpdates = (Button) mainTab.findViewById(R.id.updates);
+        //}*/
+
+    @Override
+    public void onClick(View view) {
+
+        if(view == buttonMyTriangle){
+            finish();
+            startActivity(new Intent(this, ProfileActivity.class));
+        }
+    }
+}
+
+/*
     public void setupEvenlyDistributedToolbar(){
         // Use Display metrics to get Screen Dimensions
         Display display = getWindowManager().getDefaultDisplay();
@@ -127,6 +166,4 @@ public class FacilityActivity extends AppCompatActivity {
                 }
             }
         }
-    }
-
-}
+    }*/
