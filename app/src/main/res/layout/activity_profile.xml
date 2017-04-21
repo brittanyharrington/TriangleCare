@@ -18,6 +18,7 @@
         android:orientation="vertical">
 
 
+
         <TextView
             android:id="@+id/textViewUserEmail"
             android:layout_width="wrap_content"
@@ -34,7 +35,7 @@
             android:text="Logout" />
 
 
-        <LinearLayout
+        <!--LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1.03"
@@ -46,16 +47,16 @@
                 android:id="@+id/mytriangle"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:layout_marginRight="-8dp"
+                android:layout_weight="1"
                 android:text="My Triangle" />
 
             <Button
                 android:id="@+id/facilities"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:layout_marginRight="-8dp"
+                android:layout_weight="1"
                 android:text="Facilities" />
 
             <Button
@@ -65,6 +66,15 @@
                 android:layout_weight="1"
                 android:text="Updates" />
 
-        </LinearLayout>
+        </LinearLayout-->
+
+
     </LinearLayout>
+
+    <include android:id="@+id/main_tab" layout="@layout/main_tab"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_alignParentBottom="true"
+        android:visibility="visible"/>
+
 </RelativeLayout>

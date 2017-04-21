@@ -87,7 +87,11 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         //if the email and password are not empty
         //displaying a progress dialog
 
+<<<<<<< HEAD
         progressDialog.setMessage("Logging In Please Wait...");
+=======
+        progressDialog.setMessage("Logging in. Please wait...");
+>>>>>>> 3636c4d6af40052e5a9d1101386fa7c816e49560
         progressDialog.show();
 
         //logging in the user
@@ -102,6 +106,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                             finish();
                             startActivity(new Intent(getApplicationContext(), FacilityActivity.class));
                         }
+
                     }
                 });
 

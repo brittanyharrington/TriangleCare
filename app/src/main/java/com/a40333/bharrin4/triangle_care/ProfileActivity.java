@@ -21,6 +21,7 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
 
     //view objects
     private TextView textViewUserEmail;
+    private View mainTab;
     private Button buttonLogout;
     private Button buttonFacilities;
     private Button buttonUpdates;
@@ -48,8 +49,9 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
         //initializing views
         textViewUserEmail = (TextView) findViewById(R.id.textViewUserEmail);
         buttonLogout = (Button) findViewById(R.id.buttonLogout);
-        buttonFacilities = (Button) findViewById(R.id.facilities);
-        buttonUpdates = (Button) findViewById(R.id.updates);
+        mainTab = findViewById(R.id.main_tab);
+        buttonFacilities = (Button) mainTab.findViewById(R.id.facilities);
+        buttonUpdates = (Button) mainTab.findViewById(R.id.updates);
 
         //displaying logged in user name
         textViewUserEmail.setText("Welcome "+user.getEmail());

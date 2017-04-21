@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <SearchView
+            android:id="@+id/Triangle_Search"
+            android:layout_width="match_parent"
+            android:layout_height="30dp" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="160dp">
+
+            <View
+                android:id="@+id/view"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:background="?attr/colorPrimary" />
+
+            <View
+                android:id="@+id/view"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:background="#FFFFFF" />
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="156dp"
+                android:layout_height="138dp"
+                app:srcCompat="@mipmap/app_logo"
+                tools:layout_gravity="center" />
+        </FrameLayout>
+
+        <EditText
+            android:id="@+id/status_Text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="Status Updates"
+            android:textAlignment="center" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Last Update on November 1 at 9:45 AM by Caretaker Lou Holtz"
+            android:textAlignment="center" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="300dp"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/Hygiene"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:background="#FFFFFF"
+                    android:text="Hygiene"
+                    android:textAlignment="center"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:textColor="@android:color/black"
+                    android:textSize="28sp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="5dp"
+                    android:background="?attr/colorPrimary" />
+
+                <TextView
+                    android:id="@+id/Medication"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:background="#FFFFFF"
+                    android:text="Medication"
+                    android:textAlignment="center"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:textColor="@android:color/black"
+                    android:textSize="28sp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="5dp"
+                    android:background="?attr/colorPrimary" />
+
+                <TextView
+                    android:id="@+id/Sleep"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:background="#FFFFFF"
+                    android:text="Sleep"
+                    android:textAlignment="center"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:textColor="@android:color/black"
+                    android:textSize="28sp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="5dp"
+                    android:background="?attr/colorPrimary" />
+
+                <TextView
+                    android:id="@+id/Behavioral"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:background="#FFFFFF"
+                    android:text="Behavioral"
+                    android:textAlignment="center"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:textColor="@android:color/black"
+                    android:textSize="28sp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="5dp"
+                    android:background="?attr/colorPrimary" />
+
+                <TextView
+                    android:id="@+id/Health"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:background="#FFFFFF"
+                    android:text="Health"
+                    android:textAlignment="center"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:textColor="@android:color/black"
+                    android:textSize="28sp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="5dp"
+                    android:background="?attr/colorPrimary" />
+
+                <TextView
+                    android:id="@+id/Activities"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:background="#FFFFFF"
+                    android:text="Activities"
+                    android:textAlignment="center"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:textColor="@android:color/black"
+                    android:textSize="28sp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="5dp"
+                    android:background="?attr/colorPrimary" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/Hygiene_Update"
+                    android:layout_width="250dp"
+                    android:layout_height="40dp"
+                    android:background="#FFFFFF"
+                    android:text="Hygiene update "
+                    android:textAlignment="center"
+                    android:textColor="@android:color/black"
+                    android:visibility="visible" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="5dp"
+                    android:background="?attr/colorPrimary" />
+
+                <TextView
+                    android:id="@+id/Medication_Update"
+                    android:layout_width="250dp"
+                    android:layout_height="40dp"
+                    android:background="#FFFFFF"
+                    android:text="Medication Update"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/black" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="5dp"
+                    android:background="?attr/colorPrimary" />
+
+                <TextView
+                    android:id="@+id/Sleep_Update"
+                    android:layout_width="250dp"
+                    android:layout_height="40dp"
+                    android:background="#FFFFFF"
+                    android:text="Sleep Update"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/black" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="5dp"
+                    android:background="?attr/colorPrimary" />
+
+                <TextView
+                    android:id="@+id/Behavioral_Update"
+                    android:layout_width="250dp"
+                    android:layout_height="40dp"
+                    android:background="#FFFFFF"
+                    android:text="Behavioral Update"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/black" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="5dp"
+                    android:background="?attr/colorPrimary" />
+
+                <TextView
+                    android:id="@+id/Health_Update"
+                    android:layout_width="250dp"
+                    android:layout_height="40dp"
+                    android:background="#FFFFFF"
+                    android:text="Health Update"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/black" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="5dp"
+                    android:background="?attr/colorPrimary" />
+
+                <TextView
+                    android:id="@+id/Activities_Update"
+                    android:layout_width="250dp"
+                    android:layout_height="40dp"
+                    android:background="#FFFFFF"
+                    android:text="Activites Update "
+                    android:textAlignment="center"
+                    android:textColor="@android:color/black" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="5dp"
+                    android:background="?attr/colorPrimary" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <android.support.design.widget.TabLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/toolbar2"
+        android:layout_marginTop="470dp"
+        android:background="#CCCCCC"
+        app:tabSelectedTextColor="#FFFFFF">
+
+        <android.support.design.widget.TabItem
+            android:id="@+id/My_Triangle_Tab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#E5E5E5"
+            android:text="Triangle" />
+
+        <android.support.design.widget.TabItem
+            android:id="@+id/Facilities_Tab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#E5E5E5"
+            android:text="Facilities" />
+
+        <android.support.design.widget.TabItem
+            android:id="@+id/Messages_Tab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#E5E5E5"
+            android:text="Messages" />
+
+        <android.support.design.widget.TabItem
+            android:id="@+id/Updates_Tab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#E5E5E5"
+            android:text="Updates" />
+    </android.support.design.widget.TabLayout>
+
+</RelativeLayout>
