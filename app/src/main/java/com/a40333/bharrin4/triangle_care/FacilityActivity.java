@@ -25,21 +25,21 @@ import java.util.ArrayList;
  * Created by User on 3/29/2017.
  */
 
-public class FacilityActivity extends AppCompatActivity {
+public class FacilityActivity extends ToolBarActivity {
     ArrayList<Facility> al = new ArrayList<Facility>();
 
-   // private View mainTab;
+    //private View mainTab;
     //private Button buttonMyTriangle;
     //private Button buttonUpdates;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_facility);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        setContentView(R.layout.activity_facility);
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        super.onCreate(savedInstanceState);
+
 
         //initializing views
         //mainTab = findViewById(R.id.main_tab);
@@ -96,7 +96,7 @@ public class FacilityActivity extends AppCompatActivity {
 
 
         //mainTabListener menuListener = new mainTabListener();
-      //  buttonMyTriangle.setOnClickListener(this);
+        //buttonMyTriangle.setOnClickListener(this);
 
     }
 
@@ -121,35 +121,5 @@ public class FacilityActivity extends AppCompatActivity {
         }
     }
 */
-
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        int res_id = item.getItemId();
-
-        if (res_id == R.id.my_triangle) {
-            //go to profile page
-            System.out.println("Going to profile page");
-            startActivity(new Intent(getApplicationContext(), ProfileActivity.class));
-
-        }
-
-        else if (res_id == R.id.facilities) {
-            // do nothing
-        }
-
-        else if (res_id == R.id.messages) {
-            // go to messages tab
-
-
-        }
-        return true;
-    }
 
 }
