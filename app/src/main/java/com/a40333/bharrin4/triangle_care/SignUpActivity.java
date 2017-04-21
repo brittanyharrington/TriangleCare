@@ -135,7 +135,6 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
                         progressDialog.dismiss();
                     }
                 });
-
     }
 
     @Override
