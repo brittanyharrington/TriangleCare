@@ -20,6 +20,12 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class SignUpActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -33,13 +39,20 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
     private EditText editTextConfirmPassword;
     private EditText editTextTriangleCode;
 
-
+    private String first;
+    private String last;
+    private String confirm;
+    private String email;
+    private String password;
+    private String phone;
+    private String facility;
 
     private ProgressDialog progressDialog;
 
 
     //defining firebaseauth object
     private FirebaseAuth firebaseAuth;
+    private DatabaseReference mDatabase;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +61,7 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
 
         //initializing firebase auth object
         firebaseAuth = FirebaseAuth.getInstance();
+        mDatabase = FirebaseDatabase.getInstance().getReference();
 
         //if getCurrentUser does not returns null
         if(firebaseAuth.getCurrentUser() != null){
@@ -75,14 +89,22 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
         buttonSignup.setOnClickListener(this);
     }
 
+    private void writeNewUser(String userId, String first_name, String last_name, String email, String password, String phone, String facility) {
+        User user = new User(first_name, last_name, email, password, phone, facility);
+
+        mDatabase.child("users").child(userId).setValue(user);
+    }
+
     private void registerUser(){
 
         //getting email and password from edit texts
-        String email = editTextEmail.getText().toString().trim();
-        String password  = editTextPassword.getText().toString().trim();
-        String first  = editTextFirstName.getText().toString().trim();
-        String last  = editTextLastName.getText().toString().trim();
-        String confirm  = editTextConfirmPassword.getText().toString().trim();
+        email = editTextEmail.getText().toString().trim();
+        password  = editTextPassword.getText().toString().trim();
+        first  = editTextFirstName.getText().toString().trim();
+        last  = editTextLastName.getText().toString().trim();
+        confirm  = editTextConfirmPassword.getText().toString().trim();
+        phone = editTextPhone.getText().toString().trim();
+        facility = editTextTriangleCode.toString().trim();
 
         //checking if email and passwords are empty
         if(TextUtils.isEmpty(email)){
@@ -126,7 +148,14 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
 
                         //checking if success
                         if(task.isSuccessful()){
+                            FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+                            final String userId =  user.getUid();
+                            System.out.println("userID= " + userId);
+
+                            writeNewUser(userId, first, last, email, password, phone, facility);
+
                             finish();
+
                             startActivity(new Intent(getApplicationContext(), ProfileActivity.class));
                         }else{
                             //display some message here
