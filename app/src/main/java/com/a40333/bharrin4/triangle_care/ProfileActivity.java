@@ -34,6 +34,7 @@ public class ProfileActivity extends ToolBarActivity implements View.OnClickList
 
     //view objects
     private TextView textViewUserEmail;
+
     private Button buttonLogout;
     private String first_name= "none";
 
@@ -78,6 +79,7 @@ public class ProfileActivity extends ToolBarActivity implements View.OnClickList
         //initializing views
         textViewUserEmail = (TextView) findViewById(R.id.textViewUserEmail);
         buttonLogout = (Button) findViewById(R.id.buttonLogout);
+
 
         getUser(uID);
         textViewUserEmail.setText("Welcome " + first_name);

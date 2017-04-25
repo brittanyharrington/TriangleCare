@@ -11,6 +11,7 @@ import android.widget.Button;
  * Created by troyprince on 4/21/17.
  */
 
+
 public class UpdatesActivity extends ToolBarActivity  {
 
 
@@ -22,6 +23,7 @@ public class UpdatesActivity extends ToolBarActivity  {
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("");
         super.onCreate(savedInstanceState);
+
 
 
     }
