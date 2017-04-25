@@ -33,7 +33,7 @@ public class ProfileActivity extends ToolBarActivity implements View.OnClickList
 
 
     //view objects
-    private TextView textViewUserEmail;
+    private TextView textViewUserName;
 
     private Button buttonLogout;
     private String first_name= "none";
@@ -41,9 +41,7 @@ public class ProfileActivity extends ToolBarActivity implements View.OnClickList
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-
         super.onCreate(savedInstanceState);
-
 
         //initializing firebase authentication object
         firebaseAuth = FirebaseAuth.getInstance();
@@ -66,23 +64,22 @@ public class ProfileActivity extends ToolBarActivity implements View.OnClickList
         //first_name = getIntent().getStringExtra("name");
 
         if (uID != null) {
-            //System.out.println("user ID is " + uID);
-            //System.out.println("first name is "+ first_name);
+            System.out.println("user ID is " + uID);
+            System.out.println("first name is "+ first_name);
         }
 
-        //getUser(uID);
         setContentView(R.layout.activity_profile);
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("");
 
         //initializing views
-        textViewUserEmail = (TextView) findViewById(R.id.textViewUserEmail);
+        textViewUserName = (TextView) findViewById(R.id.user_name);
         buttonLogout = (Button) findViewById(R.id.buttonLogout);
 
 
         getUser(uID);
-        textViewUserEmail.setText("Welcome " + first_name);
+        textViewUserName.setText("Welcome " + first_name);
 
 
         //adding listener to button
@@ -108,7 +105,7 @@ public class ProfileActivity extends ToolBarActivity implements View.OnClickList
                         }
 
                         // Finish this Activity, back to the stream
-                        finish();
+                        //finish();
                         // [END_EXCLUDE]
                     }
 
