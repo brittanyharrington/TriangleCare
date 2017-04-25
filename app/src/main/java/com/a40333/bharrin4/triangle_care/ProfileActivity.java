@@ -63,7 +63,6 @@ public class ProfileActivity extends ToolBarActivity implements View.OnClickList
         //getting current user ID and email
         FirebaseUser user = firebaseAuth.getCurrentUser();
         uID = user.getUid();
-
         email = user.getEmail();
 
         setContentView(R.layout.activity_profile);
@@ -77,7 +76,7 @@ public class ProfileActivity extends ToolBarActivity implements View.OnClickList
         textViewFacilityName= (TextView) findViewById(R.id.facility_name);
         buttonLogout = (Button) findViewById(R.id.buttonLogout);
 
-
+        //gather user data from Database
         final DatabaseReference myRef = mDatabase.child("users");
         Query query = myRef.orderByChild("email").equalTo(email);
         query.addListenerForSingleValueEvent(new ValueEventListener() {
