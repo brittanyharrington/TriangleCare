@@ -41,9 +41,7 @@ public class ProfileActivity extends ToolBarActivity implements View.OnClickList
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-
         super.onCreate(savedInstanceState);
-
 
         //initializing firebase authentication object
         firebaseAuth = FirebaseAuth.getInstance();
@@ -93,8 +91,6 @@ public class ProfileActivity extends ToolBarActivity implements View.OnClickList
         //adding listener to button
         buttonLogout.setOnClickListener(this);
     }
-
-
 
     @Override
     public void onClick(View view) {
