@@ -103,7 +103,7 @@ public class FacilityActivity extends ToolBarActivity {
 
                     if (facility_name.equals("Holy Cross")) {
                         facility = al.get(0);
-                    } else if (facility_name.equals("Woodridge")) {
+                    } else if (facility_name.equals("Wood Ridge")) {
                         facility = al.get(1);
                     }
 
