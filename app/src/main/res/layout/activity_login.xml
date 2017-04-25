@@ -78,6 +78,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="16dp"
+                android:background="@color/colorPrimaryDark"
                 android:text="@string/action_sign_in_short"
                 android:textStyle="bold" />
 
@@ -96,6 +97,7 @@
                 android:layout_width="240dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:background="@color/colorPrimaryDark"
                 android:text="@string/action_sign_up_short"
                 android:textStyle="bold" />
         </LinearLayout>

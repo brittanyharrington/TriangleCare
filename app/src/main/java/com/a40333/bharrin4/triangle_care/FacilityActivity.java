@@ -38,6 +38,8 @@ public class FacilityActivity extends ToolBarActivity {
 
         setContentView(R.layout.activity_facility);
         toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("");
         super.onCreate(savedInstanceState);
 
 

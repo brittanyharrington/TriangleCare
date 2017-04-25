@@ -10,6 +10,7 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -20,6 +21,13 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -32,6 +40,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
     //firebase auth object
     private FirebaseAuth firebaseAuth;
+    //private DatabaseReference mDatabase;
+
+    private String userId;
 
     //progress dialog
     private ProgressDialog progressDialog;
@@ -44,12 +55,18 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
         //getting firebase auth object
         firebaseAuth = FirebaseAuth.getInstance();
+        //mDatabase = FirebaseDatabase.getInstance().getReference();
+
 
         //if the objects getcurrentuser method is not null
         //means user is already logged in
         if(firebaseAuth.getCurrentUser() != null){
             //close this activity
+            FirebaseUser fbuser = FirebaseAuth.getInstance().getCurrentUser();
+            userId =  fbuser.getUid();
+            //System.out.println("userID= " + userId);
             finish();
+
             //opening profile activity
             startActivity(new Intent(getApplicationContext(), ProfileActivity.class));
         }
@@ -66,6 +83,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         buttonSignIn.setOnClickListener(this);
         buttonSignUp.setOnClickListener(this);
     }
+
+
 
     //method for user login
     private void userLogin(){
@@ -99,8 +118,13 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                         //if the task is successfull
                         if(task.isSuccessful()){
                             //start the profile activity
+                            FirebaseUser fbuser = FirebaseAuth.getInstance().getCurrentUser();
+                            userId =  fbuser.getUid();
+                            //System.out.println("userID= " + userId);
+
+
                             finish();
-                            startActivity(new Intent(getApplicationContext(), FacilityActivity.class));
+                            startActivity(new Intent(getApplicationContext(), ProfileActivity.class));
                         }
 
                     }

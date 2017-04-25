@@ -11,12 +11,8 @@ import android.widget.Button;
  * Created by troyprince on 4/21/17.
  */
 
-public class UpdatesActivity extends ToolBarActivity {
 
-    /*private View mainTab;
-    private Button buttonMyTriangle;
-    private Button buttonFacility;
-    private Button buttonUpdates;*/
+public class UpdatesActivity extends ToolBarActivity  {
 
 
     @Override
@@ -24,22 +20,12 @@ public class UpdatesActivity extends ToolBarActivity {
 
         setContentView(R.layout.updates_tab);
         toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("");
         super.onCreate(savedInstanceState);
 
-        //initializing views
-        /*mainTab = findViewById(R.id.main_tab);
-        buttonMyTriangle = (Button) mainTab.findViewById(R.id.mytriangle);
-        buttonFacility = (Button) mainTab.findViewById(R.id.facilities);
-        buttonUpdates = (Button) mainTab.findViewById(R.id.updates);*/
+
 
     }
-/*
-        @Override
-    public void onClick(View view) {
 
-        if(view == buttonMyTriangle){
-            finish();
-            startActivity(new Intent(this, ProfileActivity.class));
-        }
-    }*/
 }
