@@ -104,7 +104,7 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
         last  = editTextLastName.getText().toString().trim();
         confirm  = editTextConfirmPassword.getText().toString().trim();
         phone = editTextPhone.getText().toString().trim();
-        facility = editTextTriangleCode.toString().trim();
+        facility = editTextTriangleCode.getText().toString().trim();
 
         //checking if email and passwords are empty
         if(TextUtils.isEmpty(email)){

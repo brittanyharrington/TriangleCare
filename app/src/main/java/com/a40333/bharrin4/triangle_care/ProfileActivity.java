@@ -25,6 +25,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
+import org.w3c.dom.Text;
+
 public class ProfileActivity extends ToolBarActivity implements View.OnClickListener {
 
     //firebase auth object
@@ -34,6 +36,8 @@ public class ProfileActivity extends ToolBarActivity implements View.OnClickList
 
     //view objects
     private TextView textViewUserName;
+    private TextView textViewFacilityName;
+    private TextView textViewFacilityLocation;
     private Button buttonLogout;
     private String uID;
     private String email;
@@ -69,6 +73,8 @@ public class ProfileActivity extends ToolBarActivity implements View.OnClickList
 
         //initializing views
         textViewUserName = (TextView) findViewById(R.id.user_name);
+        textViewFacilityLocation = (TextView) findViewById(R.id.facility_city);
+        textViewFacilityName= (TextView) findViewById(R.id.facility_name);
         buttonLogout = (Button) findViewById(R.id.buttonLogout);
 
 
@@ -79,7 +85,9 @@ public class ProfileActivity extends ToolBarActivity implements View.OnClickList
             public void onDataChange(DataSnapshot dataSnapshot) {
                 for (DataSnapshot messageSnapshot: dataSnapshot.getChildren()) {
                     String name = (String) messageSnapshot.child("first_name").getValue();
+                    String facility = (String) messageSnapshot.child("facility").getValue();
                     textViewUserName.setText("Welcome " + name);
+                    textViewFacilityName.setText(facility);
                 }
             }
             @Override
