@@ -64,7 +64,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             //close this activity
             FirebaseUser fbuser = FirebaseAuth.getInstance().getCurrentUser();
             userId =  fbuser.getUid();
-            //System.out.println("userID= " + userId);
+            String email = fbuser.getEmail();
+            System.out.println("Login userID= " + userId + " Email = " + email);
             finish();
 
             //opening profile activity
@@ -120,8 +121,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                             //start the profile activity
                             FirebaseUser fbuser = FirebaseAuth.getInstance().getCurrentUser();
                             userId =  fbuser.getUid();
-                            //System.out.println("userID= " + userId);
-
+                            System.out.println("Login userID= " + userId);
+                            String email = fbuser.getEmail();
 
                             finish();
                             startActivity(new Intent(getApplicationContext(), ProfileActivity.class));

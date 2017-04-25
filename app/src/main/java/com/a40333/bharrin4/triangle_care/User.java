@@ -27,11 +27,28 @@ public class User implements Serializable {
         this.facility = facility;
     }
 
+
     public String getFirst_name() {
-        return first_name;
+        return this.first_name;
     }
 
     public String getLast_name() {
-        return last_name;
+        return this.last_name;
+    }
+
+    public String getEmail() {
+        return this.email;
+    }
+
+    public String getPassword() {
+        return this.password;
+    }
+
+    public String getPhone() {
+        return this.phone;
+    }
+
+    public String getFacility() {
+        return this.facility;
     }
 }

@@ -15,7 +15,6 @@ public class ToolBarActivity extends AppCompatActivity {
 
     public Toolbar toolbar;                              // Declaring the Toolbar Object
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -19,6 +19,10 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 import java.util.ArrayList;
 
 /**
@@ -28,9 +32,9 @@ import java.util.ArrayList;
 public class FacilityActivity extends ToolBarActivity {
     ArrayList<Facility> al = new ArrayList<Facility>();
 
-    //private View mainTab;
-    //private Button buttonMyTriangle;
-    //private Button buttonUpdates;
+    //firebase auth object
+    private FirebaseAuth firebaseAuth;
+    private DatabaseReference mDatabase;
 
 
     @Override
@@ -42,11 +46,9 @@ public class FacilityActivity extends ToolBarActivity {
         getSupportActionBar().setTitle("");
         super.onCreate(savedInstanceState);
 
-
-        //initializing views
-        //mainTab = findViewById(R.id.main_tab);
-        //buttonMyTriangle = (Button) mainTab.findViewById(R.id.mytriangle);
-        //buttonUpdates = (Button) mainTab.findViewById(R.id.updates);
+        //initializing firebase authentication object
+        firebaseAuth = FirebaseAuth.getInstance();
+        mDatabase = FirebaseDatabase.getInstance().getReference();
 
 
         MyCsvFileReader myCsvFileReader = new MyCsvFileReader(getApplicationContext());

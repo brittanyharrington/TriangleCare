@@ -33,9 +33,10 @@ public class ProfileActivity extends ToolBarActivity implements View.OnClickList
 
 
     //view objects
-    private TextView textViewUserEmail;
+    private TextView textViewUserName;
     private Button buttonLogout;
-    private String first_name= "none";
+    private String uID;
+    private String email;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,7 +49,6 @@ public class ProfileActivity extends ToolBarActivity implements View.OnClickList
         firebaseAuth = FirebaseAuth.getInstance();
         mDatabase = FirebaseDatabase.getInstance().getReference();
 
-
         //if the user is not logged in
         //that means current user will return null
         if(firebaseAuth.getCurrentUser() == null){
@@ -58,63 +58,40 @@ public class ProfileActivity extends ToolBarActivity implements View.OnClickList
             startActivity(new Intent(this, LoginActivity.class));
         }
 
-        //getting current user
+        //getting current user ID and email
         FirebaseUser user = firebaseAuth.getCurrentUser();
-        String uID = user.getUid();
+        uID = user.getUid();
 
-        //first_name = getIntent().getStringExtra("name");
+        email = user.getEmail();
 
-        if (uID != null) {
-            //System.out.println("user ID is " + uID);
-            //System.out.println("first name is "+ first_name);
-        }
-
-        //getUser(uID);
         setContentView(R.layout.activity_profile);
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("");
 
         //initializing views
-        textViewUserEmail = (TextView) findViewById(R.id.textViewUserEmail);
+        textViewUserName = (TextView) findViewById(R.id.user_name);
         buttonLogout = (Button) findViewById(R.id.buttonLogout);
 
-        getUser(uID);
-        textViewUserEmail.setText("Welcome " + first_name);
+
+        final DatabaseReference myRef = mDatabase.child("users");
+        Query query = myRef.orderByChild("email").equalTo(email);
+        query.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                for (DataSnapshot messageSnapshot: dataSnapshot.getChildren()) {
+                    String name = (String) messageSnapshot.child("first_name").getValue();
+                    textViewUserName.setText("Welcome " + name);
+                }
+            }
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+            }
+        });
 
 
         //adding listener to button
         buttonLogout.setOnClickListener(this);
-    }
-
-    private void getUser(final String userId) {
-        mDatabase.child("users").child(userId).addListenerForSingleValueEvent(
-                new ValueEventListener() {
-                    @Override
-                    public void onDataChange(DataSnapshot dataSnapshot) {
-                        // Get user value
-                        User user = dataSnapshot.getValue(User.class);
-
-                        // [START_EXCLUDE]
-                        if (user == null) {
-                            // User is null, error out
-                            Log.e("Tag", "User " + userId + " is unexpectedly null");
-                        } else {
-                            //displaying logged in user name
-                            first_name = user.getFirst_name();
-                            System.out.println("first name is "+ first_name);
-                        }
-
-                        // Finish this Activity, back to the stream
-                        finish();
-                        // [END_EXCLUDE]
-                    }
-
-                    @Override
-                    public void onCancelled(DatabaseError databaseError) {
-                        Log.w("tag", "getUser:onCancelled", databaseError.toException());
-                    }
-                });
     }
 
 
