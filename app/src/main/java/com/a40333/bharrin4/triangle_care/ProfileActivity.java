@@ -22,10 +22,10 @@ public class ProfileActivity extends ToolBarActivity implements View.OnClickList
 
     //view objects
     private TextView textViewUserEmail;
-    private View mainTab;
+    //private View mainTab;
     private Button buttonLogout;
-    private Button buttonFacilities;
-    private Button buttonUpdates;
+    /*private Button buttonFacilities;
+    private Button buttonUpdates;*/
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,16 +53,16 @@ public class ProfileActivity extends ToolBarActivity implements View.OnClickList
         //initializing views
         textViewUserEmail = (TextView) findViewById(R.id.textViewUserEmail);
         buttonLogout = (Button) findViewById(R.id.buttonLogout);
-        mainTab = findViewById(R.id.main_tab);
+        /*mainTab = findViewById(R.id.main_tab);
         buttonFacilities = (Button) mainTab.findViewById(R.id.facilities);
-        buttonUpdates = (Button) mainTab.findViewById(R.id.updates);
+        buttonUpdates = (Button) mainTab.findViewById(R.id.updates);*/
 
         //displaying logged in user name
         textViewUserEmail.setText("Welcome "+user.getEmail());
 
         //adding listener to button
         buttonLogout.setOnClickListener(this);
-        buttonFacilities.setOnClickListener(this);
+        //buttonFacilities.setOnClickListener(this);
     }
 
     @Override
@@ -76,11 +76,11 @@ public class ProfileActivity extends ToolBarActivity implements View.OnClickList
             //starting login activity
             startActivity(new Intent(this, LoginActivity.class));
         }
-
+/*
         if(view == buttonFacilities){
             finish();
             startActivity(new Intent(this, FacilityActivity.class));
-        }
+       }*/
 
     }
 }

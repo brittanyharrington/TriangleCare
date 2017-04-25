@@ -71,11 +71,11 @@
 
     </LinearLayout>
 
-    <include android:id="@+id/main_tab" layout="@layout/main_tab"
+    <!--include android:id="@+id/main_tab" layout="@layout/main_tab"
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
         android:layout_alignParentBottom="true"
-        android:visibility="visible"/>
+        android:visibility="visible"/-->
 
     <include android:id="@+id/toolbar" layout="@layout/toolbar"
         android:layout_height="30dp"
