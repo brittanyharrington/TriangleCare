@@ -7,7 +7,7 @@
     tools:context="com.a40333.bharrin4.triangle_care.NewUpdateActivity">
 
     <Button
-        android:id="@+id/save_button"
+        android:id="@+id/saveButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
@@ -17,150 +17,76 @@
         app:layout_constraintRight_toRightOf="parent" />
 
     <CheckBox
-        android:id="@+id/checkBox"
+        android:id="@+id/healthCk"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:text="Health"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        tools:layout_editor_absoluteY="277dp" />
+
+    <CheckBox
+        android:id="@+id/hygieneCk"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Hygiene"
         android:textSize="18sp"
         android:textStyle="bold"
-        tools:layout_editor_absoluteY="277dp"
+        app:layout_constraintHorizontal_bias="0.639"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintHorizontal_bias="0.639" />
+        tools:layout_editor_absoluteY="277dp" />
 
     <CheckBox
-        android:id="@+id/checkBox2"
+        android:id="@+id/sleepCk"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="292dp"
+        android:layout_marginRight="292dp"
+        android:text="Sleep"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:layout_editor_absoluteY="309dp" />
+
+    <CheckBox
+        android:id="@+id/behaviorCk"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Behavior"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="183dp"
+        tools:layout_editor_absoluteY="309dp" />
+
+    <CheckBox
+        android:id="@+id/medicationCk"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Medication"
         android:textIsSelectable="false"
         android:textSize="18sp"
         android:textStyle="bold"
-        tools:layout_editor_absoluteY="341dp"
+        app:layout_constraintHorizontal_bias="0.061"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintHorizontal_bias="0.061" />
-
-    <CheckBox
-        android:id="@+id/checkBox3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Sleep"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        tools:layout_editor_absoluteY="309dp"
-        android:layout_marginRight="292dp"
-        app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginEnd="292dp" />
-
-    <CheckBox
-        android:id="@+id/checkBox4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Behavior"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        tools:layout_editor_absoluteY="309dp"
-        tools:layout_editor_absoluteX="183dp" />
-
-    <CheckBox
-        android:id="@+id/checkBox5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Health"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        tools:layout_editor_absoluteY="277dp"
-        android:layout_marginLeft="16dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginStart="16dp" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Nature of Update"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        tools:layout_editor_absoluteY="118dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintHorizontal_bias="0.081" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Update Category"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintHorizontal_bias="0.079"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintVertical_bias="0.447" />
-
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Comments"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        tools:layout_editor_absoluteY="386dp"
-        app:layout_constraintHorizontal_bias="0.06" />
-
-    <EditText
-        android:id="@+id/editText3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Patient Name"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        tools:layout_editor_absoluteY="52dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintHorizontal_bias="0.161" />
-
-    <TextView
-        android:id="@+id/textView6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="New Update"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:layout_marginTop="16dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintHorizontal_bias="0.063" />
-
-    <EditText
-        android:id="@+id/editText4"
-        android:layout_width="349dp"
-        android:layout_height="44dp"
-        android:ems="10"
-        android:inputType="textMultiLine"
-        tools:layout_editor_absoluteY="415dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintHorizontal_bias="0.514" />
+        tools:layout_editor_absoluteY="341dp" />
 
     <RadioGroup
+        android:id="@+id/updateNatureRg"
         android:layout_width="185dp"
         android:layout_height="86dp"
         app:layout_constraintHorizontal_bias="0.145"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        tools:layout_editor_absoluteY="147dp">
+        tools:layout_editor_absoluteY="147dp"
+        android:checkedButton="@id/selSatisfactory">
 
         <RadioButton
-            android:id="@+id/radioButton7"
+            android:id="@+id/selOutstanding"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -169,7 +95,7 @@
             android:textStyle="bold" />
 
         <RadioButton
-            android:id="@+id/radioButton8"
+            android:id="@+id/selSatisfactory"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -178,14 +104,92 @@
             android:textStyle="bold" />
 
         <RadioButton
-            android:id="@+id/radioButton9"
+            android:id="@+id/selUnsatisfactory"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Unsatisfactory"
             android:textSize="18sp"
             android:textStyle="bold" />
+
     </RadioGroup>
+
+    <EditText
+        android:id="@+id/patientNameEt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Patient Name"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintHorizontal_bias="0.161"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:layout_editor_absoluteY="52dp" />
+
+    <EditText
+        android:id="@+id/commentsEt"
+        android:layout_width="349dp"
+        android:layout_height="44dp"
+        android:ems="10"
+        android:inputType="textMultiLine"
+        app:layout_constraintHorizontal_bias="0.514"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:layout_editor_absoluteY="415dp" />
+
+    <TextView
+        android:id="@+id/updateNatureTb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nature of Update"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintHorizontal_bias="0.081"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:layout_editor_absoluteY="118dp" />
+
+    <TextView
+        android:id="@+id/updateCategoryTb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Update Category"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.079"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.447" />
+
+    <TextView
+        android:id="@+id/commentsTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Comments"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintHorizontal_bias="0.06"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:layout_editor_absoluteY="386dp" />
+
+    <TextView
+        android:id="@+id/titleTb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="New Update"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintHorizontal_bias="0.063"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </android.support.constraint.ConstraintLayout>

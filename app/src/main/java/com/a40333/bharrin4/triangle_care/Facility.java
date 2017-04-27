@@ -32,7 +32,6 @@ public class Facility implements Serializable {
     public void setPicture(String picture) {
         this.picture = picture;
     }
-
     public String getPicture() {
         return this.picture;
     }
@@ -40,7 +39,6 @@ public class Facility implements Serializable {
     public void setName(String name) {
         this.name = name;
     }
-
     public String getName() {
         return this.name;
     }
@@ -48,7 +46,6 @@ public class Facility implements Serializable {
     public void setAddress(String address) {
         this.address = address;
     }
-
     public String getAddress() {
         return this.address;
     }
@@ -56,7 +53,6 @@ public class Facility implements Serializable {
     public void setPhone(String phone) {
         this.phone = phone;
     }
-
     public String getPhone() {
         return this.phone;
     }
@@ -64,7 +60,6 @@ public class Facility implements Serializable {
     public void setEmail(String email) {
         this.email = email;
     }
-
     public String getEmail() {
         return this.email;
     }
@@ -72,7 +67,6 @@ public class Facility implements Serializable {
     public void setMap(String map) {
         this.map = map;
     }
-
     public String getMap() {
         return this.map;
     }
@@ -80,7 +74,6 @@ public class Facility implements Serializable {
     public void setCalendar(String calendar) {
         this.calendar = calendar;
     }
-
     public String getCalendar() {
         return this.calendar;
     }
@@ -88,7 +81,6 @@ public class Facility implements Serializable {
     public void setAnnouncements(String announcements) {
         this.announcements = announcements;
     }
-
     public String getAnnouncements() {
         return this.announcements;
     }

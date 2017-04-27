@@ -1,9 +1,5 @@
 package com.a40333.bharrin4.triangle_care;
 
-/**
- * Created by User on 4/9/2017.
- */
-
 import android.content.Intent;
 import android.provider.ContactsContract;
 import android.support.v7.app.AppCompatActivity;
@@ -94,23 +90,18 @@ public class ProfileActivity extends ToolBarActivity implements View.OnClickList
             }
         });
 
-
         //adding listener to button
         buttonLogout.setOnClickListener(this);
+
     }
 
     @Override
     public void onClick(View view) {
         //if logout is pressed
         if(view == buttonLogout){
-            //logging out the user
-            firebaseAuth.signOut();
-            //closing activity
-            finish();
-            //starting login activity
-            startActivity(new Intent(this, LoginActivity.class));
+            firebaseAuth.signOut(); //logging out the user
+            finish(); //closing activity
+            startActivity(new Intent(this, LoginActivity.class)); //return to login
         }
-
-
     }
 }

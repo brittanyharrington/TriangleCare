@@ -132,10 +132,8 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
             return;
         }
 
-
-        //if the email and password are not empty
+        //if all fields are full
         //displaying a progress dialog
-
         progressDialog.setMessage("Registering Please Wait...");
         progressDialog.show();
 
