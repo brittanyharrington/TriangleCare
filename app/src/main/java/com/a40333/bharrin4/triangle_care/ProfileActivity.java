@@ -43,6 +43,7 @@ public class ProfileActivity extends ToolBarActivity implements View.OnClickList
     private Button buttonLogout;
     private String uID;
     private String email;
+    private LinearLayout scroll;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,6 +78,7 @@ public class ProfileActivity extends ToolBarActivity implements View.OnClickList
         textViewFacilityLocation = (TextView) findViewById(R.id.facility_city);
         textViewFacilityName= (TextView) findViewById(R.id.facility_name);
         buttonLogout = (Button) findViewById(R.id.buttonLogout);
+        scroll = (LinearLayout) findViewById(R.id.updates_lin_menu);
 
         //gather user data from Database
         final DatabaseReference myRef = mDatabase.child("users");
@@ -87,60 +89,53 @@ public class ProfileActivity extends ToolBarActivity implements View.OnClickList
                 for (DataSnapshot messageSnapshot: dataSnapshot.getChildren()) {
                     String name = (String) messageSnapshot.child("first_name").getValue();
                     String facility = (String) messageSnapshot.child("facility").getValue();
-                    //User user = (User) messageSnapshot.getValue();
                     textViewUserName.setText("Welcome " + name);
                     textViewFacilityName.setText(facility);
                     for (DataSnapshot updateSnapshot : messageSnapshot.child("hygieneUpdates").getChildren()) {
-                        ScrollView scroll = (ScrollView) findViewById(R.id.updates_scroll_menu);
 
                         TextView tv1 = new TextView(getApplicationContext());
                         tv1.setText("New Hygiene Update \nPatient Name: " + updateSnapshot.child("patientName").getValue() + "\nNature: " + updateSnapshot.child("nature").getValue() + "\nComments: " +
-                        updateSnapshot.child("comments").getValue() + "\n\n");
+                        updateSnapshot.child("comments").getValue() + "\n");
 
                         scroll.addView(tv1);
                     }
                     for (DataSnapshot updateSnapshot : messageSnapshot.child("medUpdates").getChildren()) {
-                        ScrollView scroll = (ScrollView) findViewById(R.id.updates_scroll_menu);
 
                         TextView tv1 = new TextView(getApplicationContext());
                         tv1.setText("New Medication Update \nPatient Name: " + updateSnapshot.child("patientName").getValue() + "\nNature: " + updateSnapshot.child("nature").getValue() + "\nComments: " +
-                                updateSnapshot.child("comments").getValue() + "\n\n");
+                                updateSnapshot.child("comments").getValue() + "\n");
 
                         scroll.addView(tv1);
                     }
                     for (DataSnapshot updateSnapshot : messageSnapshot.child("sleepUpdates").getChildren()) {
-                        ScrollView scroll = (ScrollView) findViewById(R.id.updates_scroll_menu);
 
                         TextView tv1 = new TextView(getApplicationContext());
                         tv1.setText("New Sleep Update \nPatient Name: " + updateSnapshot.child("patientName").getValue() + "\nNature: " + updateSnapshot.child("nature").getValue() + "\nComments: " +
-                                updateSnapshot.child("comments").getValue() + "\n\n");
+                                updateSnapshot.child("comments").getValue() + "\n");
 
                         scroll.addView(tv1);
                     }
                     for (DataSnapshot updateSnapshot : messageSnapshot.child("behaviorUpdates").getChildren()) {
-                        ScrollView scroll = (ScrollView) findViewById(R.id.updates_scroll_menu);
 
                         TextView tv1 = new TextView(getApplicationContext());
                         tv1.setText("New Behavioral Update \nPatient Name: " + updateSnapshot.child("patientName").getValue() + "\nNature: " + updateSnapshot.child("nature").getValue() + "\nComments: " +
-                                updateSnapshot.child("comments").getValue() + "\n\n");
+                                updateSnapshot.child("comments").getValue() + "\n");
 
                         scroll.addView(tv1);
                     }
                     for (DataSnapshot updateSnapshot : messageSnapshot.child("healthUpdates").getChildren()) {
-                        ScrollView scroll = (ScrollView) findViewById(R.id.updates_scroll_menu);
 
                         TextView tv1 = new TextView(getApplicationContext());
                         tv1.setText("New Health Update \nPatient Name: " + updateSnapshot.child("patientName").getValue() + "\nNature: " + updateSnapshot.child("nature").getValue() + "\nComments: " +
-                                updateSnapshot.child("comments").getValue() + "\n\n");
+                                updateSnapshot.child("comments").getValue() + "\n");
 
                         scroll.addView(tv1);
                     }
                     for (DataSnapshot updateSnapshot : messageSnapshot.child("activityUpdates").getChildren()) {
-                        ScrollView scroll = (ScrollView) findViewById(R.id.updates_scroll_menu);
 
                         TextView tv1 = new TextView(getApplicationContext());
                         tv1.setText("New Activity Update \nPatient Name: " + updateSnapshot.child("patientName").getValue() + "\nNature: " + updateSnapshot.child("nature").getValue() + "\nComments: " +
-                                updateSnapshot.child("comments").getValue() + "\n\n");
+                                updateSnapshot.child("comments").getValue() + "\n");
 
                         scroll.addView(tv1);
                     }

@@ -42,9 +42,17 @@
                 android:layout_height="138dp"
                 app:srcCompat="@mipmap/app_logo"
                 tools:layout_gravity="center" />
+
+            <ImageButton
+                android:id="@+id/new_update_button"
+                android:src="@drawable/ic_control_point_black_24dp"
+                android:background="@color/colorPrimary"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:text="Button" />
         </FrameLayout>
 
-        <EditText
+        <TextView
             android:id="@+id/status_Text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -52,7 +60,10 @@
             android:ems="10"
             android:inputType="textPersonName"
             android:text="Status Updates"
-            android:textAlignment="center" />
+            android:textAlignment="center"
+            android:textColor="@color/textColorPrim"
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/textView"
@@ -60,7 +71,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Last Update on November 1 at 9:45 AM by Caretaker Lou Holtz"
-            android:textAlignment="center" />
+            android:textAlignment="center"
+            android:textColor="@color/textColorPrim" />
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -170,97 +182,116 @@
 
             </LinearLayout>
 
-            <LinearLayout
+            <ScrollView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:layout_marginLeft="10dp"
+                android:background="#FFFFFF">
 
-                <TextView
-                    android:id="@+id/Hygiene_Update"
-                    android:layout_width="250dp"
-                    android:layout_height="40dp"
+                <LinearLayout
+                    android:id="@+id/updates_linear"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:background="#FFFFFF"
-                    android:text="Hygiene update "
-                    android:textAlignment="center"
-                    android:textColor="@android:color/black"
-                    android:visibility="visible" />
+                    android:orientation="vertical">
 
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="5dp"
-                    android:background="?attr/colorPrimary" />
+                    <TextView
+                        android:layout_width="235dp"
+                        android:layout_height="match_parent"
+                        android:text="Updates"
+                        android:textAlignment="center"
+                        android:textColor="@color/textColorPrim"
+                        android:textSize="18sp" />
 
-                <TextView
-                    android:id="@+id/Medication_Update"
-                    android:layout_width="250dp"
-                    android:layout_height="40dp"
-                    android:background="#FFFFFF"
-                    android:text="Medication Update"
-                    android:textAlignment="center"
-                    android:textColor="@android:color/black" />
+                    <!--TextView
+                        android:id="@+id/Hygiene_Update"
+                        android:layout_width="250dp"
+                        android:layout_height="40dp"
+                        android:background="#FFFFFF"
+                        android:text="Hygiene update "
+                        android:textAlignment="center"
+                        android:textColor="@android:color/black"
+                        android:visibility="visible" />
 
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="5dp"
-                    android:background="?attr/colorPrimary" />
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="5dp"
+                        android:background="?attr/colorPrimary" />
 
-                <TextView
-                    android:id="@+id/Sleep_Update"
-                    android:layout_width="250dp"
-                    android:layout_height="40dp"
-                    android:background="#FFFFFF"
-                    android:text="Sleep Update"
-                    android:textAlignment="center"
-                    android:textColor="@android:color/black" />
+                    <TextView
+                        android:id="@+id/Medication_Update"
+                        android:layout_width="250dp"
+                        android:layout_height="40dp"
+                        android:background="#FFFFFF"
+                        android:text="Medication Update"
+                        android:textAlignment="center"
+                        android:textColor="@android:color/black" />
 
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="5dp"
-                    android:background="?attr/colorPrimary" />
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="5dp"
+                        android:background="?attr/colorPrimary" />
 
-                <TextView
-                    android:id="@+id/Behavioral_Update"
-                    android:layout_width="250dp"
-                    android:layout_height="40dp"
-                    android:background="#FFFFFF"
-                    android:text="Behavioral Update"
-                    android:textAlignment="center"
-                    android:textColor="@android:color/black" />
+                    <TextView
+                        android:id="@+id/Sleep_Update"
+                        android:layout_width="250dp"
+                        android:layout_height="40dp"
+                        android:background="#FFFFFF"
+                        android:text="Sleep Update"
+                        android:textAlignment="center"
+                        android:textColor="@android:color/black" />
 
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="5dp"
-                    android:background="?attr/colorPrimary" />
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="5dp"
+                        android:background="?attr/colorPrimary" />
 
-                <TextView
-                    android:id="@+id/Health_Update"
-                    android:layout_width="250dp"
-                    android:layout_height="40dp"
-                    android:background="#FFFFFF"
-                    android:text="Health Update"
-                    android:textAlignment="center"
-                    android:textColor="@android:color/black" />
+                    <TextView
+                        android:id="@+id/Behavioral_Update"
+                        android:layout_width="250dp"
+                        android:layout_height="40dp"
+                        android:background="#FFFFFF"
+                        android:text="Behavioral Update"
+                        android:textAlignment="center"
+                        android:textColor="@android:color/black" />
 
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="5dp"
-                    android:background="?attr/colorPrimary" />
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="5dp"
+                        android:background="?attr/colorPrimary" />
 
-                <TextView
-                    android:id="@+id/Activities_Update"
-                    android:layout_width="250dp"
-                    android:layout_height="40dp"
-                    android:background="#FFFFFF"
-                    android:text="Activites Update "
-                    android:textAlignment="center"
-                    android:textColor="@android:color/black" />
+                    <TextView
+                        android:id="@+id/Health_Update"
+                        android:layout_width="250dp"
+                        android:layout_height="40dp"
+                        android:background="#FFFFFF"
+                        android:text="Health Update"
+                        android:textAlignment="center"
+                        android:textColor="@android:color/black" />
 
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="5dp"
-                    android:background="?attr/colorPrimary" />
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="5dp"
+                        android:background="?attr/colorPrimary" />
 
-            </LinearLayout>
+                    <TextView
+                        android:id="@+id/Activities_Update"
+                        android:layout_width="250dp"
+                        android:layout_height="40dp"
+                        android:background="#FFFFFF"
+                        android:text="Activites Update "
+                        android:textAlignment="center"
+                        android:textColor="@android:color/black" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="5dp"
+                        android:background="?attr/colorPrimary" /> -->
+
+                </LinearLayout>
+
+            </ScrollView>
+
 
         </LinearLayout>
 

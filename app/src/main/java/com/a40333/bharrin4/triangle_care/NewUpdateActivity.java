@@ -28,7 +28,6 @@ public class NewUpdateActivity extends AppCompatActivity {
 
     private String uID;
     private String email;
-    private String type;
 
     Button saveButton;
     boolean healthCk = false;
@@ -59,7 +58,6 @@ public class NewUpdateActivity extends AppCompatActivity {
         FirebaseUser user = firebaseAuth.getCurrentUser();
         uID = user.getUid();
         email = user.getEmail();
-        type = getIntent().getStringExtra("type");
 
         //gather user data from Database
         final DatabaseReference myRef = mDatabase.child("users");

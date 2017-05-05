@@ -12,11 +12,13 @@
 
     <Button
         android:id="@+id/buttonLogout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Logout"
+        android:layout_width="60dp"
+        android:layout_height="40dp"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true" />
+        android:background="@color/colorPrimaryDark"
+        android:text="Logout"
+        android:textColor="@color/colorAccent" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -66,11 +68,6 @@
             android:layout_gravity="center_horizontal"
             android:text="Facility City" />
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="10dp"
-            android:background="@android:color/darker_gray"/>
-
         <TextView
             android:id="@+id/recent_updates_text"
             android:layout_width="wrap_content"
@@ -84,7 +81,15 @@
         <ScrollView
             android:id="@+id/updates_scroll_menu"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp">
+            <LinearLayout
+                android:orientation="vertical"
+                android:id="@+id/updates_lin_menu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+            </LinearLayout>
 
         </ScrollView>
 
