@@ -5,6 +5,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -112,10 +113,15 @@ public class UpdatesActivity extends ToolBarActivity {
                         for (DataSnapshot messageSnapshot: dataSnapshot.getChildren()) {
                             String name = (String) messageSnapshot.child("first_name").getValue();
                             System.out.println("First name: "+ name);
+
+                            if(((LinearLayout) updates).getChildCount() > 0)
+                                ((LinearLayout) updates).removeAllViews();
+
                             for (DataSnapshot updateSnapshot : messageSnapshot.child("hygieneUpdates").getChildren()) {
 
                                 TextView tv1 = new TextView(getApplicationContext());
                                 tv1.setTextColor(Color.parseColor("#000000"));
+                                tv1.setGravity(Gravity.CENTER);
                                 tv1.setText("Patient Name: " + updateSnapshot.child("patientName").getValue() + "\nNature: " + updateSnapshot.child("nature").getValue() + "\nComments: " +
                                         updateSnapshot.child("comments").getValue() + "\n");
 
@@ -141,10 +147,15 @@ public class UpdatesActivity extends ToolBarActivity {
                         for (DataSnapshot messageSnapshot: dataSnapshot.getChildren()) {
                             String name = (String) messageSnapshot.child("first_name").getValue();
                             System.out.println("First name: "+ name);
+
+                            if(((LinearLayout) updates).getChildCount() > 0)
+                                ((LinearLayout) updates).removeAllViews();
+
                             for (DataSnapshot updateSnapshot : messageSnapshot.child("medUpdates").getChildren()) {
 
                                 TextView tv1 = new TextView(getApplicationContext());
                                 tv1.setTextColor(Color.parseColor("#000000"));
+                                tv1.setGravity(Gravity.CENTER);
                                 tv1.setText("Patient Name: " + updateSnapshot.child("patientName").getValue() + "\nNature: " + updateSnapshot.child("nature").getValue() + "\nComments: " +
                                         updateSnapshot.child("comments").getValue() + "\n");
 
@@ -171,10 +182,15 @@ public class UpdatesActivity extends ToolBarActivity {
                         for (DataSnapshot messageSnapshot: dataSnapshot.getChildren()) {
                             String name = (String) messageSnapshot.child("first_name").getValue();
                             System.out.println("First name: "+ name);
+
+                            if(((LinearLayout) updates).getChildCount() > 0)
+                                ((LinearLayout) updates).removeAllViews();
+
                             for (DataSnapshot updateSnapshot : messageSnapshot.child("sleepUpdates").getChildren()) {
 
                                 TextView tv1 = new TextView(getApplicationContext());
                                 tv1.setTextColor(Color.parseColor("#000000"));
+                                tv1.setGravity(Gravity.CENTER);
                                 tv1.setText("Patient Name: " + updateSnapshot.child("patientName").getValue() + "\nNature: " + updateSnapshot.child("nature").getValue() + "\nComments: " +
                                         updateSnapshot.child("comments").getValue() + "\n");
 
@@ -201,10 +217,15 @@ public class UpdatesActivity extends ToolBarActivity {
                         for (DataSnapshot messageSnapshot: dataSnapshot.getChildren()) {
                             String name = (String) messageSnapshot.child("first_name").getValue();
                             System.out.println("First name: "+ name);
+
+                            if(((LinearLayout) updates).getChildCount() > 0)
+                                ((LinearLayout) updates).removeAllViews();
+
                             for (DataSnapshot updateSnapshot : messageSnapshot.child("behaviorUpdates").getChildren()) {
 
                                 TextView tv1 = new TextView(getApplicationContext());
                                 tv1.setTextColor(Color.parseColor("#000000"));
+                                tv1.setGravity(Gravity.CENTER);
                                 tv1.setText("Patient Name: " + updateSnapshot.child("patientName").getValue() + "\nNature: " + updateSnapshot.child("nature").getValue() + "\nComments: " +
                                         updateSnapshot.child("comments").getValue() + "\n");
 
@@ -231,10 +252,15 @@ public class UpdatesActivity extends ToolBarActivity {
                         for (DataSnapshot messageSnapshot: dataSnapshot.getChildren()) {
                             String name = (String) messageSnapshot.child("first_name").getValue();
                             System.out.println("First name: "+ name);
+
+                            if(((LinearLayout) updates).getChildCount() > 0)
+                                ((LinearLayout) updates).removeAllViews();
+
                             for (DataSnapshot updateSnapshot : messageSnapshot.child("healthUpdates").getChildren()) {
 
                                 TextView tv1 = new TextView(getApplicationContext());
                                 tv1.setTextColor(Color.parseColor("#000000"));
+                                tv1.setGravity(Gravity.CENTER);
                                 tv1.setText("Patient Name: " + updateSnapshot.child("patientName").getValue() + "\nNature: " + updateSnapshot.child("nature").getValue() + "\nComments: " +
                                         updateSnapshot.child("comments").getValue() + "\n");
 
@@ -262,10 +288,15 @@ public class UpdatesActivity extends ToolBarActivity {
                         for (DataSnapshot messageSnapshot: dataSnapshot.getChildren()) {
                             String name = (String) messageSnapshot.child("first_name").getValue();
                             System.out.println("First name: "+ name);
+
+                            if(((LinearLayout) updates).getChildCount() > 0)
+                                ((LinearLayout) updates).removeAllViews();
+
                             for (DataSnapshot updateSnapshot : messageSnapshot.child("activityUpdates").getChildren()) {
 
                                 TextView tv1 = new TextView(getApplicationContext());
                                 tv1.setTextColor(Color.parseColor("#000000"));
+                                tv1.setGravity(Gravity.CENTER);
                                 tv1.setText("Patient Name: " + updateSnapshot.child("patientName").getValue() + "\nNature: " + updateSnapshot.child("nature").getValue() + "\nComments: " +
                                         updateSnapshot.child("comments").getValue() + "\n");
 
