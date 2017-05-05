@@ -110,7 +110,7 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
         if(TextUtils.isEmpty(email)){
             Toast.makeText(this,"Please enter email",Toast.LENGTH_LONG).show();
             return;
-        }
+             }
 
         if(TextUtils.isEmpty(password)){
             Toast.makeText(this,"Please enter password",Toast.LENGTH_LONG).show();

@@ -25,6 +25,7 @@
         android:text="Health"
         android:textSize="18sp"
         android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@+id/updateCategoryTb"
         app:layout_constraintLeft_toLeftOf="parent"
         tools:layout_editor_absoluteY="277dp" />
 
@@ -38,6 +39,8 @@
         app:layout_constraintHorizontal_bias="0.639"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/updateCategoryTb"
+        app:layout_constraintLeft_toRightOf="@+id/healthCk"
         tools:layout_editor_absoluteY="277dp" />
 
     <CheckBox
@@ -50,6 +53,7 @@
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/healthCk"
         tools:layout_editor_absoluteY="309dp" />
 
     <CheckBox
@@ -59,6 +63,8 @@
         android:text="Behavior"
         android:textSize="18sp"
         android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/hygieneCk"
+        app:layout_constraintLeft_toRightOf="@+id/sleepCk"
         tools:layout_editor_absoluteX="183dp"
         tools:layout_editor_absoluteY="309dp" />
 
@@ -71,6 +77,7 @@
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintHorizontal_bias="0.061"
+        app:layout_constraintTop_toBottomOf="@id/sleepCk"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         tools:layout_editor_absoluteY="341dp" />
@@ -82,8 +89,9 @@
         app:layout_constraintHorizontal_bias="0.145"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        tools:layout_editor_absoluteY="147dp"
-        android:checkedButton="@id/selSatisfactory">
+        app:layout_constraintTop_toBottomOf="@+id/updateNatureTb"
+        tools:layout_editor_absoluteY="147dp">
+        <!--android:checkedButton="@id/selSatisfactory"-->
 
         <RadioButton
             android:id="@+id/selOutstanding"
@@ -127,6 +135,7 @@
         app:layout_constraintHorizontal_bias="0.161"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titleTb"
         tools:layout_editor_absoluteY="52dp" />
 
     <EditText
@@ -138,6 +147,7 @@
         app:layout_constraintHorizontal_bias="0.514"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/commentsTv"
         tools:layout_editor_absoluteY="415dp" />
 
     <TextView
@@ -150,6 +160,7 @@
         app:layout_constraintHorizontal_bias="0.081"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/patientNameEt"
         tools:layout_editor_absoluteY="118dp" />
 
     <TextView
@@ -176,6 +187,7 @@
         app:layout_constraintHorizontal_bias="0.06"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/medicationCk"
         tools:layout_editor_absoluteY="386dp" />
 
     <TextView

@@ -11,41 +11,87 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
-public class NewUpdateActivity extends AppCompatActivity implements View.OnClickListener {
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
+
+public class NewUpdateActivity extends AppCompatActivity {
+
+    //firebase auth object
+    private FirebaseAuth firebaseAuth;
+    private DatabaseReference mDatabase;
+
+    private String uID;
+    private String email;
+    private String type;
 
     Button saveButton;
+    boolean healthCk = false;
+    boolean hygieneCk = false;
+    boolean sleepCk = false;
+    boolean behaviorCk = false;
+    boolean medicationCk = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_update);
 
+        //initializing firebase authentication object
+        firebaseAuth = FirebaseAuth.getInstance();
+        mDatabase = FirebaseDatabase.getInstance().getReference();
+
+        //if the user is not logged in
+        //that means current user will return null
+        if(firebaseAuth.getCurrentUser() == null){
+            //closing this activity
+            finish();
+            //starting login activity
+            startActivity(new Intent(this, LoginActivity.class));
+        }
+
+        //getting current user ID and email
+        FirebaseUser user = firebaseAuth.getCurrentUser();
+        uID = user.getUid();
+        email = user.getEmail();
+        type = getIntent().getStringExtra("type");
+
+        //gather user data from Database
+        final DatabaseReference myRef = mDatabase.child("users");
+        Query query = myRef.orderByChild("email").equalTo(email);
+        query.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                for (DataSnapshot messageSnapshot: dataSnapshot.getChildren()) {
+                    String name = (String) messageSnapshot.child("first_name").getValue();
+                    System.out.println("First name: "+ name);
+                }
+            }
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+            }
+        });
 
         //initializing views
         saveButton = (Button) findViewById(R.id.saveButton);
+        saveButton.setOnClickListener(new Button.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                sendUpdate();
 
-    }
+                finish(); //closing activity
+            }
+        });
 
-    @Override
-    public void onClick(View view) {
-        if(view == saveButton){
-
-            //needs to finish being implemented
-            sendUpdate();
-
-
-            finish(); //closing activity
-            startActivity(new Intent(this, UpdatesActivity.class)); //return to login
-        }
     }
 
     public void sendUpdate() {
 
-        boolean healthCk = ((CheckBox) findViewById(R.id.healthCk)).isEnabled();
-        boolean hygieneCk = ((CheckBox) findViewById(R.id.hygieneCk)).isEnabled();
-        boolean sleepCk = ((CheckBox) findViewById(R.id.sleepCk)).isEnabled();
-        boolean behaviorCk = ((CheckBox) findViewById(R.id.behaviorCk)).isEnabled();
-        boolean medicationCk = ((CheckBox) findViewById(R.id.medicationCk)).isEnabled();
         String nature = null;
         if (((RadioButton) findViewById(R.id.selOutstanding)).isChecked()) {
             nature = "Outstanding";
@@ -57,7 +103,32 @@ public class NewUpdateActivity extends AppCompatActivity implements View.OnClick
         String patientName = ((EditText)findViewById(R.id.patientNameEt)).getText().toString();
         String comments = ((EditText)findViewById(R.id.commentsEt)).getText().toString();
 
-        MedUpdate Update = new MedUpdate(patientName, nature, healthCk, hygieneCk, sleepCk, behaviorCk, medicationCk, comments);
+        if (((CheckBox) findViewById(R.id.healthCk)).isChecked()) {
+            healthCk = true;
+            Update healthupdate = new Update(patientName, nature, comments);
+            DatabaseReference newRef = mDatabase.child("users").child(uID).child("healthUpdates").push();
+            newRef.setValue(healthupdate);
+        } if (((CheckBox) findViewById(R.id.hygieneCk)).isChecked()) {
+            hygieneCk = true;
+            Update hygieneupdate = new Update(patientName, nature, comments);
+            DatabaseReference newRef = mDatabase.child("users").child(uID).child("hygieneUpdates").push();
+            newRef.setValue(hygieneupdate);
+        } if (((CheckBox) findViewById(R.id.sleepCk)).isChecked()) {
+            sleepCk = true;
+            Update sleepupdate = new Update(patientName, nature, comments);
+            DatabaseReference newRef = mDatabase.child("users").child(uID).child("sleepUpdates").push();
+            newRef.setValue(sleepupdate);
+        } if (((CheckBox) findViewById(R.id.behaviorCk)).isChecked()) {
+            behaviorCk = true;
+            Update behaviorupdate = new Update(patientName, nature, comments);
+            DatabaseReference newRef = mDatabase.child("users").child(uID).child("behaviorUpdates").push();
+            newRef.setValue(behaviorupdate);
+        } if (((CheckBox) findViewById(R.id.medicationCk)).isChecked()) {
+            medicationCk = true;
+            Update medupdate = new Update(patientName, nature, comments);
+            DatabaseReference newRef = mDatabase.child("users").child(uID).child("medUpdates").push();
+            newRef.setValue(medupdate);
+        }
     }
 }
 

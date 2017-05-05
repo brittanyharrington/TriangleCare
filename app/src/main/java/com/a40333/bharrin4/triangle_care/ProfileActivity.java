@@ -23,6 +23,8 @@ import com.google.firebase.database.ValueEventListener;
 
 import org.w3c.dom.Text;
 
+import java.util.ArrayList;
+
 public class ProfileActivity extends ToolBarActivity implements View.OnClickListener {
 
     //firebase auth object
@@ -81,14 +83,18 @@ public class ProfileActivity extends ToolBarActivity implements View.OnClickList
                 for (DataSnapshot messageSnapshot: dataSnapshot.getChildren()) {
                     String name = (String) messageSnapshot.child("first_name").getValue();
                     String facility = (String) messageSnapshot.child("facility").getValue();
+                    //User user = (User) messageSnapshot.getValue();
                     textViewUserName.setText("Welcome " + name);
                     textViewFacilityName.setText(facility);
+                    //ArrayList<Update> hygieneUpdates = user.getHygieneUpdates();
+                    //System.out.println("Patient name: " + hygieneUpdates.get(0).getPatientName());
                 }
             }
             @Override
             public void onCancelled(DatabaseError databaseError) {
             }
         });
+
 
         //adding listener to button
         buttonLogout.setOnClickListener(this);

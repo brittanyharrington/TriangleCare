@@ -1,6 +1,7 @@
 package com.a40333.bharrin4.triangle_care;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 /**
  * Created by User on 4/21/2017.
@@ -13,6 +14,7 @@ public class User implements Serializable {
     public String password;
     public String phone;
     public String facility;
+    public ArrayList<Update> hygieneUpdates;
 
     public User() {
         // Default constructor required for calls to DataSnapshot.getValue(User.class)
@@ -50,5 +52,9 @@ public class User implements Serializable {
 
     public String getFacility() {
         return this.facility;
+    }
+
+    public ArrayList<Update> getHygieneUpdates() {
+        return this.hygieneUpdates;
     }
 }
